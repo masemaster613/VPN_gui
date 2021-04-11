@@ -2,8 +2,10 @@ import os, json
 from tkinter import *
 from tkinter import ttk
 
+config= #insert file location for config file
+
 def vpn_start():
-	o = os.popen('openvpn3 session-start --config=/home/mason/chrx.ovpn').readlines()
+	o = os.popen('openvpn3 session-start --config=' + config).readlines()
 	for line in o:
 		if line[0:13] == 'Session path:':
 			path = line[14:].strip()
