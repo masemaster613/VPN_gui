@@ -2,7 +2,7 @@ import os, json
 from tkinter import *
 from tkinter import ttk
 
-config= #insert file location for config file
+
 
 def vpn_start():
 	o = os.popen('openvpn3 session-start --config=' + config).readlines()
@@ -41,7 +41,7 @@ ttk.Button(mainframe, text="Update Status", command=get_sessions).grid(column=2,
 
 config = StringVar()
 ttk.Entry(mainframe, text_variable=config).grid(column=1, row=2, sticky=W)
-#uncomment next line and insert path to your ovpn config file
+#uncomment next line and insert path to your ovpn config file then it will be in as default
 #config.set('config.ovpn')
 
 sessions_frame = ttk.Frame(root)
