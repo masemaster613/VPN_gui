@@ -39,8 +39,9 @@ ttk.Button(mainframe, text="Start VPN", command=vpn_start).grid(column=1, row=1,
 ttk.Button(mainframe, text="Stop VPN", command=vpn_stop).grid(column=3, row=1, sticky=E)
 ttk.Button(mainframe, text="Update Status", command=get_sessions).grid(column=2, row=1, sticky=E)
 
+ttk.Label(mainframe, text='Path to config file:').grid(column=1, row=2, sticky=W)
 config = StringVar()
-ttk.Entry(mainframe, text=config).grid(column=1, row=2, sticky=W)
+ttk.Entry(mainframe, text=config).grid(column=1, row=3, columnspan=3, sticky=W)
 #uncomment next line and insert path to your ovpn config file then it will be in as default
 #config.set('config.ovpn')
 
