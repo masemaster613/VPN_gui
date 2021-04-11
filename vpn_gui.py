@@ -5,7 +5,7 @@ from tkinter import ttk
 
 
 def vpn_start():
-	o = os.popen('openvpn3 session-start --config=' + config).readlines()
+	o = os.popen('openvpn3 session-start --config=' + config.get()).readlines()
 	for line in o:
 		if line[0:13] == 'Session path:':
 			path = line[14:].strip()
@@ -40,7 +40,7 @@ ttk.Button(mainframe, text="Stop VPN", command=vpn_stop).grid(column=3, row=1, s
 ttk.Button(mainframe, text="Update Status", command=get_sessions).grid(column=2, row=1, sticky=E)
 
 config = StringVar()
-ttk.Entry(mainframe, text_variable=config).grid(column=1, row=2, sticky=W)
+ttk.Entry(mainframe, text=config).grid(column=1, row=2, sticky=W)
 #uncomment next line and insert path to your ovpn config file then it will be in as default
 #config.set('config.ovpn')
 
